@@ -25,7 +25,7 @@ jobs:
         run: npm run render src/components/TextVideo.tsx out/video.mp4 --props='{"text":"${{ github.event.inputs.text }}"}'
         
       - name: Upload video
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: rendered-video
           path: out/video.mp4

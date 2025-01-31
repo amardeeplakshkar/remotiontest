@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState } from 'react';
 import { VideoPreview } from './components/VideoPreview';
 import { Github, Play, Download, AlertCircle } from 'lucide-react';
@@ -10,7 +12,7 @@ function App() {
   const triggerGithubAction = async (text: string) => {
     try {
       const response = await fetch(
-        'https://api.github.com/repos/your-username/your-repo/actions/workflows/render-video.yml/dispatches',
+        'https://api.github.com/repos/amardeeplakshkar/remotiontest/actions/workflows/render-video.yml/dispatches',
         {
           method: 'POST',
           headers: {
@@ -40,7 +42,7 @@ function App() {
   const checkWorkflowStatus = async () => {
     try {
       const response = await fetch(
-        'https://api.github.com/repos/your-username/your-repo/actions/runs?per_page=1',
+        'https://api.github.com/repos/amardeeplakshkar/remotiontest/actions/runs?per_page=1',
         {
           headers: {
             'Accept': 'application/vnd.github.v3+json',
@@ -65,7 +67,7 @@ function App() {
     try {
       // Get artifacts list
       const artifactsResponse = await fetch(
-        `https://api.github.com/repos/your-username/your-repo/actions/runs/${runId}/artifacts`,
+        `https://api.github.com/repos/amardeeplakshkar/remotiontest/actions/runs/${runId}/artifacts`,
         {
           headers: {
             'Accept': 'application/vnd.github.v3+json',
@@ -161,7 +163,7 @@ function App() {
               <span className="text-xl font-semibold">Text Video Generator</span>
             </div>
             <a
-              href="https://github.com/your-username/your-repo"
+              href="https://github.com/amardeeplakshkar/remotiontest"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-500 hover:text-gray-700"
